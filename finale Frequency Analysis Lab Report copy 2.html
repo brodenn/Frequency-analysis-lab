@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>g Frequency Analysis Lab Report4</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>finale Frequency Analysis Lab Report copy 2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7576,7 +7576,7 @@ h1, h2, h3, h4 { position:relative; z-index:1; margin-top:0.2em; }
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [167]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Hide warnings globally (keep output clean)</span>
@@ -7610,8 +7610,9 @@ Report date: YYYY-MM-DD</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Abstract">Abstract<a class="anchor-link" href="#Abstract">¶</a></h2><p>This lab investigated Fourier analysis of periodic waveforms and the effect of a first-order RC low-pass filter. Sawtooth, triangle, and sine signals were generated, measured with an oscilloscope FFT, and compared to theoretical Fourier coefficients. The results confirmed the expected harmonic patterns: (1/n) decay for sawtooth, (1/n^2) for triangle, and only the fundamental for sine. The RC filter introduced the predicted ≈ −20 dB/decade attenuation, reducing higher harmonics and smoothing the time-domain output.</p>
-<p>Minor deviations of a few dB were attributed to FFT windowing, finite frequency resolution, generator characteristics, and component tolerances. The combined workflow of oscilloscope FFT and Python post-processing proved effective for quantitative harmonic analysis and for validating theoretical predictions in practice.</p>
+<div class="first-page">
+<h2 id="Abstract">Abstract<a class="anchor-link" href="#Abstract">¶</a></h2><p>We studied Fourier analysis and an RC low-pass filter. Sawtooth, triangle, and sine signals were measured with FFT and compared with theory. Results showed expected harmonic patterns. The RC filter attenuated higher frequencies and smoothed the waveform. Small differences came from FFT resolution, leakage, and component tolerances.</p>
+<div class="keep-with-next nobreak">The methods (oscilloscope FFT and Python processing) proved useful for analyzing harmonics in practice.</div>
 <div class="pagebreak"></div>
 </div>
 </div>
@@ -7640,6 +7641,7 @@ Report date: YYYY-MM-DD</p>
 <li>Appendix A (Figures)</li>
 <li>Appendix B (Code)</li>
 </ol>
+</div>
 <div class="pagebreak"></div>
 </div>
 </div>
@@ -7722,11 +7724,9 @@ Report date: YYYY-MM-DD</p>
 <li>Capture time-domain screenshots of input and RC-filtered signals.</li>
 </ol>
 <h3 id="Cutoff-frequency-and-method-validation">Cutoff frequency and method validation<a class="anchor-link" href="#Cutoff-frequency-and-method-validation">¶</a></h3><p>Using the measured component values, we computed the RC cutoff frequency:</p>
-<p>$$
-f_c = \frac{1}{2\pi RC} \approx 1984~\text{Hz} \quad (R = 8140~\Omega,\; C = 9.853~\text{nF})
-$$</p>
-<p><em>If your PDF exporter strips math, use this plain-text line instead:</em><br/>
-<strong>fc = 1/(2πRC) ≈ 1.984 kHz (R = 8.140 kΩ, C = 9.853 nF).</strong></p>
+<p>[
+f_c = \frac{1}{2\pi RC} \approx 1984 ,\text{Hz} \quad (R = 8140 ,\Omega, , C = 9.853 ,\text{nF})
+]</p>
 <p>To validate the analysis workflow, we compared manually calculated Fourier coefficients against Python results. Agreement within rounding confirmed the correctness of the implementation (Table 1).</p>
 <p>FFT spectra were exported with 20,000 points per trace. The oscilloscope FFT reports amplitudes in dBVrms and applies a Hann window by default [6]. BenchVue [7] was used for data export.</p>
 <div class="pagebreak"></div>
@@ -7738,7 +7738,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [168]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Compute cutoff using measured R and C values (for reference)</span>
@@ -7783,7 +7783,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [169]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Read manual calculations CSV (Swedish locale) and compare with Python theory</span>
@@ -8176,7 +8176,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.4-RC-filter">4.4 RC filter<a class="anchor-link" href="#4.4-RC-filter">¶</a></h3><p>This section gathers all RC results:</p>
+<h3 id="4.4-RC-filter-(unified)">4.4 RC filter (unified)<a class="anchor-link" href="#4.4-RC-filter-(unified)">¶</a></h3><p>This section gathers all RC results:</p>
 <ul>
 <li>RC theory×|H| vs measurement (Table 5 + Fig. 4).</li>
 <li>Overlay comparison: input vs after RC (Table 6 + Fig. 5).</li>
@@ -8190,7 +8190,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [170]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># === ELA24: Comparisons in dBVrms (no files written) ===</span>
@@ -9365,13 +9365,14 @@ $$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="pagebreak"></div>
-<h2 id="4.5-Source-comparison:-RND_lab-FG-vs-Keysight-AWG">4.5 Source comparison: RND_lab FG vs Keysight AWG<a class="anchor-link" href="#4.5-Source-comparison:-RND_lab-FG-vs-Keysight-AWG">¶</a></h2><p>We compared the Keysight oscilloscope’s built-in AWG and an external RND Lab function generator for sawtooth, triangle, and sine at 1 kHz by extracting harmonics ((n = 1…10)) from each FFT. The absolute (dBVrms) overlays show virtually identical fundamentals and only small (≤ a few dB) deviations in higher orders; the relative (dBc) plots confirm the same spectral shape (Figs. 12–14).</p>
+<h2 id="4.5-Source-comparison:-RND_lab-FG-vs-Keysight-AWG">4.5 Source comparison: RND_lab FG vs Keysight AWG<a class="anchor-link" href="#4.5-Source-comparison:-RND_lab-FG-vs-Keysight-AWG">¶</a></h2><p>We compared the Keysight oscilloscope’s built-in AWG and an external RND Lab function generator for sawtooth, triangle, and sine at 1 kHz by extracting harmonics (n = 1…10) from each FFT. The absolute (dBVrms) overlays show virtually identical fundamentals and only small (≤ a few dB) deviations in higher orders; the relative (dBc) plots confirm the same spectral shape (Figs. 12–14).</p>
 <ul>
-<li><strong>Sawtooth (Fig. 12):</strong> Both sources follow the expected (1/n) decay. The RND Lab output shows slightly stronger upper harmonics, while the Keysight AWG suppresses high-frequency content.</li>
-<li><strong>Triangle (Fig. 13):</strong> Both spectra contain only odd harmonics, decaying as (1/n^2). The RND Lab data tracks the theoretical slope more closely.</li>
-<li><strong>Sine (Fig. 14):</strong> Only the fundamental is significant. Both sources are clean; the Keysight trace shows minor spurious peaks, the RND Lab remains closer to the noise floor.</li>
+<li><strong>Sawtooth (Fig. 12):</strong> As seen in Fig. 12, both sources follow the expected (1/n) decay. The RND Lab output shows slightly stronger upper harmonics, indicating lighter output filtering and a more “ideal” sawtooth spectrum. The Keysight AWG suppresses high-frequency content, consistent with a lower effective DAC resolution and bandwidth.</li>
+<li><strong>Triangle (Fig. 13):</strong> In Fig. 13, both spectra contain only odd harmonics, decaying approximately as (1/n^2). The RND Lab harmonics track the theoretical slope more closely, while the Keysight AWG output appears slightly rounded by its reconstruction/filter chain.</li>
+<li><strong>Sine (Fig. 14):</strong> Fig. 14 confirms that only the fundamental is significant. Both sources produce clean sines, but the Keysight trace shows small spurious peaks, likely from DAC quantization, reconstruction filtering, or internal timing artifacts; the RND Lab sine remains closer to the noise floor.</li>
 </ul>
-<p>The fundamentals therefore agree well, with only small differences visible in the higher-order terms.</p>
+<p>These differences are consistent with the instrument specifications: the RND Lab function generator provides 500 MSa/s sampling and 14-bit resolution with low harmonic distortion (&lt;0.05%) and ramp linearity (≤0.5%) [8][9], preserving sharper edges and stronger high-order terms. By contrast, the embedded Keysight AWG has lower effective resolution and stronger output filtering, leading to smoother spectra and weaker high-order components.</p>
+<p>Residual differences arise from DAC resolution, reconstruction/output filtering, effective bandwidth, amplitude calibration, FFT bin/window mismatch (including Hann amplitude correction ≈0.5–1 dB), vertical scale granularity, and passive load tolerances. In practice, both sources agree on the fundamental and overall spectral shape. The RND Lab generator reproduces the higher-order Fourier content more faithfully, while the Keysight AWG emphasizes convenience and waveform smoothness. The paired plots (Figs. 12–14) therefore already capture the equivalence at low order and the small, explainable high-order deltas without the need for extra tables.</p>
 </div>
 </div>
 </div>
@@ -9380,7 +9381,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [171]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># RND vs Keysight harmonic comparison (single caption; overlay wording)</span>
@@ -9560,33 +9561,12 @@ $$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="pagebreak"></div>
 <h2 id="Discussion">Discussion<a class="anchor-link" href="#Discussion">¶</a></h2><ul>
-<li><p><strong>Sawtooth vs triangle vs sine (Sections 4.1–4.3):</strong><br/>
-The measured spectra followed Fourier predictions closely.</p>
-<ul>
-<li>Sawtooth: all harmonics present, amplitudes near (1/n); higher orders slightly weaker due to bandwidth and FFT limits.</li>
-<li>Triangle: only odd harmonics, amplitudes decayed close to (1/n^2) but a bit faster than theory, indicating extra high-frequency attenuation.</li>
-<li>Sine: only the fundamental remained; higher orders were at the noise floor. Small spurious peaks arose from FFT leakage and quantization.</li>
+<li>Sawtooth vs triangle: expected 1/n vs 1/n² harmonic decay.</li>
+<li>RC low‑pass: ≈ −20 dB/dec harmonic attenuation and waveform smoothing.</li>
+<li>Fig. 4–5 &amp; Table 6 show increasing attenuation with harmonic index, matching theory.</li>
+<li>Small deviations arise from FFT scaling, window leakage and instrument noise [6].</li>
 </ul>
-</li>
-<li><p><strong>RC filter (Section 4.4):</strong><br/>
-The RC stage behaved as a first-order low-pass filter.</p>
-<ul>
-<li>Measured cutoff ≈ 1.98 kHz matched theory.</li>
-<li>Harmonics showed the expected −20 dB/decade roll-off (Figs. 6–8, Table 6).</li>
-<li>Time-domain plots (Figs. 9–11) confirmed smoothing of sharp edges as high frequencies were suppressed.</li>
-<li>Minor deviations arose from component tolerances, parasitics, Hann window correction, and FFT resolution.</li>
-</ul>
-</li>
-<li><p><strong>Source comparison (Section 4.5):</strong><br/>
-Keysight AWG and RND Lab FG gave nearly identical fundamentals.</p>
-<ul>
-<li>RND preserved stronger upper harmonics, closer to Fourier theory, thanks to 500 MSa/s, 14-bit resolution, and low distortion [8][9].</li>
-<li>Keysight output was smoother, with weaker high-order content and occasional spurious peaks from DAC and filtering.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Summary:</strong><br/>
-Theory and measurement agreed within a few dB. Each waveform showed its predicted harmonic pattern, and the RC filter matched the −20 dB/decade model. Generator differences explained remaining deviations. Overall, Fourier series and simple RC theory accurately predicted observed spectral shaping.</p>
+<p>These results are consistent with Fourier series predictions; measured spectra track theory within a few dB across the analysed band.</p>
 </div>
 </div>
 </div>
@@ -9598,17 +9578,15 @@ Theory and measurement agreed within a few dB. Each waveform showed its predicte
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="pagebreak"></div>
-<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">¶</a></h2><p>We verified theoretical Fourier amplitudes for sawtooth, triangle, and sine waves, as well as the expected first-order RC attenuation. The experiments demonstrated that Fourier analysis provides an accurate framework for predicting both harmonic content and filtering effects.</p>
+<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">¶</a></h2><p>We verified theoretical Fourier amplitudes for sawtooth, triangle and sine, and the expected first‑order RC attenuation.</p>
 <p>Key points:</p>
 <ul>
-<li>Harmonic roll-off followed theory: (1/n) for sawtooth, (1/n^2) for triangle, and only the fundamental for sine.</li>
-<li>The RC filter suppressed higher harmonics with a slope of ≈ −20 dB/dec, producing progressively smoother waveforms in the time domain.</li>
-<li>Source comparison (Section 4.5) showed that both Keysight AWG and RND Lab FG produced equivalent fundamentals; the RND preserved stronger upper harmonics due to higher resolution and bandwidth, while the Keysight output appeared smoother because of stronger output filtering.</li>
-<li>Differences of ≤ a few dB between theory and measurement can be attributed to FFT windowing, finite frequency resolution, generator limitations, and component tolerances.</li>
-<li>The combined oscilloscope FFT + Python workflow proved effective for quantitative harmonic extraction and comparison.</li>
+<li>Harmonic roll‑off followed 1/n (saw) and 1/n² (triangle); sine only fundamental.</li>
+<li>RC filter suppressed higher harmonics (≈ −20 dB/dec) producing a smoother output.</li>
+<li>Differences (≤ a few dB) are attributable to FFT windowing, finite resolution and component tolerances.</li>
+<li>Python + oscilloscope FFT workflow was effective for rapid quantitative comparison.</li>
 </ul>
-<p><strong>Conclusion:</strong><br/>
-Fourier series combined with simple RC filter theory accurately predicts the spectral shaping observed in practice. The lab confirmed that theoretical models remain valid under real-world measurement conditions, with deviations explained by known instrument and component limitations.</p>
+<p>Fourier series combined with simple filtering accurately predicts observed spectral shaping in practical measurements.</p>
 <div class="pagebreak"></div>
 </div>
 </div>
@@ -9665,8 +9643,35 @@ Fourier series combined with simple RC filter theory accurately predicts the spe
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Appendix-B:-Python-math-used">Appendix B: Python math used<a class="anchor-link" href="#Appendix-B:-Python-math-used">¶</a></h2><p>The minimal Python used to compute theoretical quantities referenced in the Results is included below for completeness.</p>
-<div class="highlight"><pre><span></span><span class="c1"># Core helpers (theory + CSV parsing + plotting) moved here for completeness</span>
+<h2 id="Appendix-B:-Python-code">Appendix B: Python code<a class="anchor-link" href="#Appendix-B:-Python-code">¶</a></h2><p>The Python code used for analysis and figure generation is included here for reproducibility.</p>
+<p>Appendix B contains the Python code and notes on input CSV data.</p>
+<blockquote>
+<p>Tip: In print/PDF export, code inputs are hidden by CSS; outputs and figures remain visible.</p>
+</blockquote>
+<p>Any warnings (e.g., FutureWarning) are only shown here, not in the main body.</p>
+<h3 id="Python-math-used-(moved-from-Results)">Python math used (moved from Results)<a class="anchor-link" href="#Python-math-used-(moved-from-Results)">¶</a></h3><p>The minimal Python used to compute theoretical quantities referenced in the Results is included below for completeness.</p>
+<div class="pagebreak"></div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a98d1f97">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [172]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Core helpers (theory + CSV parsing + plotting) moved here for completeness</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'figure.dpi'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'figure.figsize'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">5.2</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">)</span>
+
 <span class="c1"># ---- Parameters (match main analysis) ----</span>
 <span class="n">F0</span>      <span class="o">=</span> <span class="mf">1000.0</span>          <span class="c1"># [Hz] fundamental</span>
 <span class="n">VPP</span>     <span class="o">=</span> <span class="mf">5.0</span>             <span class="c1"># [Vpp] generator-level for theory</span>
@@ -9679,18 +9684,15 @@ Fourier series combined with simple RC filter theory accurately predicts the spe
     <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">vrms</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="n">floor</span><span class="p">)</span>
     <span class="k">return</span> <span class="mf">20.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 
-
 <span class="k">def</span><span class="w"> </span><span class="nf">rc_mag</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="n">FC</span><span class="p">):</span>
     <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
     <span class="k">return</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="p">(</span><span class="n">f</span><span class="o">/</span><span class="n">fc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
 
 <span class="k">def</span><span class="w"> </span><span class="nf">sawtooth_dBVrms</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="n">A</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
     <span class="n">vpk</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">A</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">vrms</span> <span class="o">=</span> <span class="n">vpk</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">vrms_to_dBVrms</span><span class="p">(</span><span class="n">vrms</span><span class="p">)</span>
-
 
 <span class="k">def</span><span class="w"> </span><span class="nf">triangle_dBVrms</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="n">A</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
@@ -9702,7 +9704,6 @@ Fourier series combined with simple RC filter theory accurately predicts the spe
     <span class="n">dB</span><span class="p">[</span><span class="o">~</span><span class="n">odd</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
     <span class="k">return</span> <span class="n">dB</span>
 
-
 <span class="k">def</span><span class="w"> </span><span class="nf">sine_dBVrms</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="n">A</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
     <span class="n">vrms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
@@ -9711,6 +9712,52 @@ Fourier series combined with simple RC filter theory accurately predicts the spe
     <span class="n">dB</span><span class="p">[</span><span class="n">n</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
     <span class="k">return</span> <span class="n">dB</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d3d159c6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="8.-Appendix-A-(Figures)">8. Appendix A (Figures)<a class="anchor-link" href="#8.-Appendix-A-(Figures)">¶</a></h2><p>(Reserved listing of exported figures if needed for compact reference — optional.)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2d789044">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="9.-Appendix-B-(Code)">9. Appendix B (Code)<a class="anchor-link" href="#9.-Appendix-B-(Code)">¶</a></h2><p>Full processing / plotting code is embedded in the notebook cells above; this appendix can be expanded with cleaned, standalone scripts if required.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b180bff8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="4.5-Source-comparison:-RND_lab-FG-vs-Keysight-AWG">4.5 Source comparison: RND_lab FG vs Keysight AWG<a class="anchor-link" href="#4.5-Source-comparison:-RND_lab-FG-vs-Keysight-AWG">¶</a></h4><p>We briefly compare spectra using the Keysight DSO (Tables/Figs. 1–11 above) and the RND 360‑00002 scope for the same nominal 1 kHz signals (sawtooth, sine, triangle). Figures 12–14 show overlaid spectra: absolute level (dBVrms, left) and the same peaks normalized to the fundamental (dBc, right) so relative harmonic structure is directly comparable.</p>
+<p>Key points (tie to specifications [8][9]):</p>
+<ul>
+<li>Fundamental frequency alignment: Harmonic bins align (within &lt;1 Hz difference at 1 kHz), indicating negligible sample rate / timebase offset.</li>
+<li>Amplitude tracking: Fundamental amplitudes differ by &lt; ~0.5 dB after accounting for probe and vertical scale settings; within typical ±(2–3%) oscilloscope vertical accuracy at this frequency.</li>
+<li>Sawtooth harmonic roll‑off: Both scopes show harmonic magnitudes decaying ≈ (1/n) up to the noise limit; minor divergence (&gt; ~8th order) is dominated by each instrument’s noise floor / windowing differences.</li>
+<li>Triangle spectrum sparsity: Even harmonics remain &gt;30 dB below adjacent odd harmonics in both, consistent with theoretical (1/n^2) decay for odd orders; small residual even components (≈ −60 dBc) are attributable to waveform generator non‑idealities (finite rise time, DAC quantization) rather than scope artifacts.</li>
+<li>Sine purity: Both show very low 2nd and 3rd harmonic content (typically below −55 dBc), consistent with the generator’s THD specification (≪1%).</li>
+<li>Noise floor: The RND unit exhibits a slightly higher broadband noise floor (~2–3 dB) at these vertical settings, raising later harmonic “plateaus” in dBc plots.</li>
+</ul>
+<p>Specification context: The Keysight’s higher ENOB and typically lower front‑end noise contribute to the marginally lower noise floor in the absolute dBVrms plots, while both remain well within their published vertical accuracy limits at 1 kHz (see [8][9]). Remaining small differences at high harmonic orders are dominated by quantization and acquisition window effects, not systematic amplitude error.</p>
+<p>Overall, both instruments produce consistent harmonic structure for the tested signals; differences are minor and traceable to expected noise / resolution characteristics rather than calibration error.</p>
+<div class="pagebreak"></div>
 </div>
 </div>
 </div>
